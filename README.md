@@ -29,7 +29,7 @@ module "example" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.14 |
+| terraform | >= 0.12.28 |
 | github | ~> 3.0 |
 | http | ~> 1.2 |
 
