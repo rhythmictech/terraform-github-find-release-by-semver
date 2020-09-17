@@ -5,5 +5,9 @@ terraform {
     github = {
       version = "~> 3.0"
     }
+
+    http = {
+      version = "~> 1.2"
+    }
   }
 }

@@ -26,13 +26,14 @@ A bit about this module
 |------|---------|
 | terraform | >= 0.12.14 |
 | github | ~> 3.0 |
+| http | ~> 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | github | ~> 3.0 |
-| http | n/a |
+| http | ~> 1.2 |
 
 ## Inputs
 
