@@ -27,33 +27,33 @@ module "example" {
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name      | Version    |
-|-----------|------------|
+| Name | Version |
+|------|---------|
 | terraform | >= 0.12.14 |
-| github    | ~> 3.0     |
-| http      | ~> 1.2     |
+| github | ~> 3.0 |
+| http | ~> 1.2 |
 
 ## Providers
 
-| Name   | Version |
-|--------|---------|
-| github | ~> 3.0  |
-| http   | ~> 1.2  |
+| Name | Version |
+|------|---------|
+| github | ~> 3.0 |
+| http | ~> 1.2 |
 
 ## Inputs
 
-| Name                | Description                                                                | Type     | Default | Required |
-|---------------------|----------------------------------------------------------------------------|----------|---------|:--------:|
-| repo\_name          | Name of the repo (without owner)                                           | `string` | n/a     |   yes    |
-| repo\_owner         | Name of the User or Org who owns the repo                                  | `string` | n/a     |   yes    |
-| version\_constraint | The NPM-style version constraint you want to use to find the right version | `string` | n/a     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| repo\_name | Name of the repo (without owner) | `string` | n/a | yes |
+| repo\_owner | Name of the User or Org who owns the repo | `string` | n/a | yes |
+| version\_constraint | The NPM-style version constraint you want to use to find the right version | `string` | n/a | yes |
 
 ## Outputs
 
-| Name            | Description                                 |
-|-----------------|---------------------------------------------|
-| target\_version | Version matched to constraint               |
-| version\_info   | All available info about the target release |
+| Name | Description |
+|------|-------------|
+| target\_version | Version matched to constraint |
+| version\_info | All available info about the target release |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
