@@ -22,26 +22,32 @@ A bit about this module
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name      | Version    |
-|-----------|------------|
+| Name | Version |
+|------|---------|
 | terraform | >= 0.12.14 |
+| github | ~> 3.0 |
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| github | ~> 3.0 |
+| http | n/a |
 
 ## Inputs
 
-| Name | Description                                     | Type          | Default | Required |
-|------|-------------------------------------------------|---------------|---------|:--------:|
-| name | Moniker to apply to all resources in the module | `string`      | n/a     |   yes    |
-| tags | User-Defined tags                               | `map(string)` | `{}`    |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| repo\_name | Name of the repo (without owner) | `string` | n/a | yes |
+| repo\_owner | Name of the User or Org who owns the repo | `string` | n/a | yes |
+| version\_constraint | The NPM-style version constraint you want to use to find the right version | `string` | n/a | yes |
 
 ## Outputs
 
-| Name         | Description                  |
-|--------------|------------------------------|
-| tags\_module | Tags Module in it's entirety |
+| Name | Description |
+|------|-------------|
+| target\_version | Version matched to constraint |
+| version\_info | All available info about the target release |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
