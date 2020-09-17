@@ -1,16 +1,31 @@
+data "http" "available_versions" {
+  url = "https://api.github.com/repos/${var.repo_owner}/${var.repo_name}/releases"
 
-module "tags" {
-  source  = "rhythmictech/tags/terraform"
-  version = "1.0.0"
-
-  enforce_case = "UPPER"
-  names        = [var.name]
-  tags         = var.tags
+  request_headers = {
+    accept = "vnd.github.v3+json"
+  }
 }
 
 locals {
-  # tflint-ignore: terraform_unused_declarations
-  name = module.tags.name
-  # tflint-ignore: terraform_unused_declarations
-  tags = module.tags.tags_no_name
+  available_versions = local.data.*.tag_name
+  data               = jsondecode(data.http.available_versions.body)
+
+  tag_version_map = {
+    for tag in local.available_versions : trimprefix(tag, "v") => tag
+  }
+}
+
+module "find_semver_match" {
+  source  = "rhythmictech/find-semver-match/terraform"
+  version = "1.0.0-rc3"
+
+  available_versions = local.available_versions
+  version_constraint = var.version_constraint
+}
+
+data "github_release" "this" {
+  owner       = var.repo_owner
+  repository  = var.repo_name
+  release_tag = local.tag_version_map[module.find_semver_match.target_version]
+  retrieve_by = "tag"
 }

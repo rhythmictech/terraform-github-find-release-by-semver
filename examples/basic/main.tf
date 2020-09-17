@@ -1,10 +1,8 @@
-
 module "example" {
-  source = "../.."
+  source  = "rhythmictech/find-release-by-semver/github"
+  version = "~> 1.0.0-rc1"
 
-  name = "test"
-}
-
-output "example" {
-  value = module.example
+  repo_name          = "terraform-aws-rds-postgres"
+  repo_owner         = "rhythmictech"
+  version_constraint = "~2.0.1"
 }

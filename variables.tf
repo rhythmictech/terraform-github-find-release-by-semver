@@ -1,11 +1,14 @@
-
-variable "name" {
-  description = "Moniker to apply to all resources in the module"
+variable "version_constraint" {
   type        = string
+  description = "The NPM-style version constraint you want to use to find the right version"
 }
 
-variable "tags" {
-  default     = {}
-  description = "User-Defined tags"
-  type        = map(string)
+variable "repo_name" {
+  type        = string
+  description = "Name of the repo (without owner)"
+}
+
+variable "repo_owner" {
+  type        = string
+  description = "Name of the User or Org who owns the repo"
 }
