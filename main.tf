@@ -24,8 +24,8 @@ module "find_semver_match" {
 }
 
 data "github_release" "this" {
-  repository  = var.repo_name
   owner       = var.repo_owner
-  retrieve_by = "tag"
+  repository  = var.repo_name
   release_tag = local.tag_version_map[module.find_semver_match.target_version]
+  retrieve_by = "tag"
 }
