@@ -7,8 +7,9 @@ data "http" "available_versions" {
 }
 
 locals {
-  data               = jsondecode(data.http.available_versions.body)
   available_versions = local.data.*.tag_name
+  data               = jsondecode(data.http.available_versions.body)
+
   tag_version_map = {
     for tag in local.available_versions : trimprefix(tag, "v") => tag
   }
