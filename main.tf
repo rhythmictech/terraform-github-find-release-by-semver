@@ -17,7 +17,7 @@ locals {
 
 module "find_semver_match" {
   source  = "rhythmictech/find-semver-match/terraform"
-  version = "~> 1.1.0""
+  version = "~> 1.1.0"
 
   available_versions = local.available_versions
   version_constraint = var.version_constraint
