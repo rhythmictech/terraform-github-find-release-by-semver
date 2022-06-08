@@ -28,31 +28,42 @@ module "example" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.28 |
-| github | ~> 3.0 |
-| http | ~> 1.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.4 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | ~> 3.0 |
-| http | ~> 1.2 |
+| <a name="provider_github"></a> [github](#provider\_github) | 4.26.0 |
+| <a name="provider_http"></a> [http](#provider\_http) | 2.2.0 |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_find_semver_match"></a> [find\_semver\_match](#module\_find\_semver\_match) | rhythmictech/find-semver-match/terraform | ~> 1.1.0 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [github_release.this](https://registry.terraform.io/providers/hashicorp/github/latest/docs/data-sources/release) | data source |
+| [http_http.available_versions](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| repo\_name | Name of the repo (without owner) | `string` | n/a | yes |
-| repo\_owner | Name of the User or Org who owns the repo | `string` | n/a | yes |
-| version\_constraint | The NPM-style version constraint you want to use to find the right version | `string` | n/a | yes |
+| <a name="input_repo_name"></a> [repo\_name](#input\_repo\_name) | Name of the repo (without owner) | `string` | n/a | yes |
+| <a name="input_repo_owner"></a> [repo\_owner](#input\_repo\_owner) | Name of the User or Org who owns the repo | `string` | n/a | yes |
+| <a name="input_version_constraint"></a> [version\_constraint](#input\_version\_constraint) | The NPM-style version constraint you want to use to find the right version | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| target\_version | Version matched to constraint |
-| version\_info | All available info about the target release |
-
+| <a name="output_target_version"></a> [target\_version](#output\_target\_version) | Version matched to constraint |
+| <a name="output_version_info"></a> [version\_info](#output\_version\_info) | All available info about the target release |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
