@@ -1,9 +1,5 @@
 data "http" "available_versions" {
   url = "https://api.github.com/repos/${var.repo_owner}/${var.repo_name}/releases"
-
-  request_headers = {
-    accept = "vnd.github.v3+json"
-  }
 }
 
 locals {
